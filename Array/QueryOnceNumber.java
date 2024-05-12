@@ -48,8 +48,8 @@ public class QueryOnceNumber {
         for(int val : array){
             res = res^val;
         }
-        String binary = Integer.toBinaryString(res);
-        String binary2 = Integer.toBinaryString(-res);
+//        String binary = Integer.toBinaryString(res);
+//        String binary2 = Integer.toBinaryString(-res);
         int temp = res & (-res);
         // 保存和最后一个不同的位异或的结果
         int res1 = 0;
