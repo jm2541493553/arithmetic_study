@@ -1,7 +1,5 @@
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
+
 //2 3 1 0 2 5 3
 public class QueryRepetitiveNumber {
     public static void main(String[] args) {
@@ -41,6 +39,20 @@ public class QueryRepetitiveNumber {
                 return array[i];
             }else {
                 nums[array[i]] = 1;
+            }
+        }
+
+        return -1;
+    }
+
+    private static int QueryRepetitiveNumber3(int[] array) {
+        Set<Integer > set = new HashSet<>();
+        for(int i =0; i < array.length;i++){
+            if(set.contains(array[i])){
+               return array[i];
+            }
+            else {
+                set.add(array[i]);
             }
         }
 

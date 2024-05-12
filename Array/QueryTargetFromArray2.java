@@ -22,12 +22,9 @@ public class QueryTargetFromArray2 {
     //暴力搜索
     public static boolean QueryNumber(int[][] array, int target) {
         // 比较次数
-        int comNum = 0;
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[0].length; j++) {
-                comNum ++;
                 if (array[i][j] == target) {
-                    System.out.println(comNum);
                     return true;
                 }
             }
@@ -37,11 +34,8 @@ public class QueryTargetFromArray2 {
     //优化
     public static boolean QueryNumber2(int[][] array, int target) {
         // 比较次数
-        int comNum = 0;
         for (int i = array.length - 1, j = 0; i >= 0 && i < array.length && j >= 0 && j < array[0].length; ) {
-            comNum++;
             if (array[i][j] == target) {
-                System.out.println(comNum);
                 return true;
             }
             if(array[i][j]<target){
