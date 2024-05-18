@@ -32,6 +32,14 @@ public class QueryReversePairFromArray {
         int[] nums = new int[array.length];
         return getNums(array, nums, 0, array.length - 1) % 1000000007;
     }
+//    8 6 4 2 7 5 3 1  left = 0 right = 7
+//    mid = 0 + (7-1)/2 = 3
+//    8 6 4 2      7 5 3 1
+//    8 6 4 2, left=0; right = 3        7 5 3 1 left =4. right =7
+//    mid = 0 + (3-0)/2 = 1
+//    8 6  left =0, right = 1
+//    mid = 0
+//    8 left = 0; right =0
     public static int getNums(int[] array, int[] nums, int left, int right) {
         if (left >= right) {
             return 0;
@@ -39,7 +47,7 @@ public class QueryReversePairFromArray {
         int mid = left + (right - left) / 2;
         int leftNum = getNums(array, nums, left, mid) % 1000000007;
         int rightNum = getNums(array, nums, mid + 1, right) % 1000000007;
-        return leftNum + rightNum+mergeNum(array, nums, left, mid, right);
+        return leftNum + rightNum+ mergeNum(array, nums, left, mid, right);
     }
 
     public static int mergeNum(int[] array, int[] nums, int left, int mid, int right) {
