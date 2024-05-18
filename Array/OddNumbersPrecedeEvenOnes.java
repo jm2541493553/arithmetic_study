@@ -14,6 +14,7 @@ public class OddNumbersPrecedeEvenOnes {
             System.out.println(x[i]);
         }
     }
+//    你好
     public static int[] OddNumbersPrecedeEvenOnes(int[] array){
         int[] array2 = new int[array.length];
         int odds = 0;
