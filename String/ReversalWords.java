@@ -6,10 +6,10 @@ public class ReversalWords {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String str = sc.nextLine();
-        String newStr = ReversalWords3(str);
+        String newStr = ReversalWords4(str);
         System.out.println(newStr);
     }
-    public static String ReversalWords(String str){
+    public static String ReversalWords1(String str){
         String[] words = str.split(" ");
         String ret = "";
 //        StringBuilder stringBuilder = new StringBuilder();
@@ -58,5 +58,35 @@ public class ReversalWords {
             }
         }
         return ret;
+    }
+    public static String ReversalWords4(String str){
+        if (str != null && str.length() != 0 && !str.equals("   ")) {
+            int start = str.length() - 1, end = start;
+            StringBuffer stringBuffer = new StringBuffer();
+            for (; start > 0; ) {
+                // 如果为空格
+                if (str.charAt(start) == ' ') {
+                    // 且开始索引和结束索引不一致的情况
+                    if (start != end) {
+                        // 遍历start+1~end的字符，加到
+                        for (int i = start + 1; i <= end; i++) {
+                            stringBuffer.append(str.charAt(i));
+                        }
+                        // 每一个单词的后面加上一个空格
+                        stringBuffer.append(" ");
+                    }
+                    start--;
+                    end = start;
+                } else {
+                    start--;
+                }
+            }
+            // 处理最后一个单词
+            for (int i = 0; i <= end; i++) {
+                stringBuffer.append(str.charAt(i));
+            }
+            return stringBuffer.toString();
+        }
+        return str;
     }
 }
