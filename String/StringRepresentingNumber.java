@@ -26,9 +26,17 @@ public class StringRepresentingNumber {
     }
 
     public static boolean StringRepresentingNumber(String str){
+//        12e；hasNumber=false，hasE=true
+//        1a3.14；
+//        1.2.3：hasNumber=true，hasDot=true,
+
+//        + -
         boolean hasSign = false;
+//        数字
         boolean hasNumber = false;
+//        E
         boolean hasE = false;
+//        小数点
         boolean hasDot = false;
         for (int i = 0; i < str.length();i++){
             char c = str.charAt(i);

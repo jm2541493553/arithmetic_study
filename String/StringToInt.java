@@ -20,6 +20,7 @@ public class StringToInt {
                 continue;
             }else if (i ==0 && str.charAt(i) == '-'){
                 positive = false;
+                continue;
             }else {
                 if (str.charAt(i) - '0' >= 0 && '9' - str.charAt(i) >= 0) {
                     result = result * 10 + (str.charAt(i) - '0');

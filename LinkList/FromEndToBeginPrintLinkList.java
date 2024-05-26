@@ -1,4 +1,4 @@
-import java.util.List;
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Stack;
 
@@ -11,32 +11,40 @@ public class FromEndToBeginPrintLinkList {
             list.add(scanner.nextInt());
         }
 
-        LinkedList list2 = FromEndToBeginPrintLinkList02(list);
-
-        list2.print();
+        ArrayList<Integer> list2 = FromEndToBeginPrintLinkList02(list);
+        for (Integer val:list2) {
+            System.out.println(val);
+        }
     }
 
     //方法1：使用栈
-    public static LinkedList  FromEndToBeginPrintLinkList01(LinkedList list){
+    public static ArrayList<Integer>  FromEndToBeginPrintLinkList01(LinkedList list){
         Stack<Integer> s = new Stack<>();
         LinkNode ln = list.head;
         while (ln!=null){
             s.push(ln.val);
             ln = ln.next;
         }
-        LinkedList list2 = new LinkedList();
+        ArrayList<Integer> list2 = new ArrayList<>();
         while (!s.empty()){
             list2.add(s.pop());
         }
         return list2;
     }
     //方法2：头插法
-    public static LinkedList  FromEndToBeginPrintLinkList02(LinkedList list){
+    public static ArrayList<Integer> FromEndToBeginPrintLinkList02(LinkedList list){
+        LinkNode head = new LinkNode(-1);
         LinkNode ln = list.head;
-        LinkedList list2 = new LinkedList();
+        ArrayList<Integer> list2 = new ArrayList<>();
         while (ln!=null){
-            list2.insertAtHead(ln.val);
-            ln = ln.next;
+            LinkNode temp = ln.next;
+            ln.next = head.next;
+            head.next = ln;
+            ln = temp;
+        }
+        while (head!=null){
+            list2.add(head.val);
+            head = head.next;
         }
         return list2;
     }

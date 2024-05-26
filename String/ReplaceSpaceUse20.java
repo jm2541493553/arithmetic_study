@@ -21,11 +21,12 @@ public class ReplaceSpaceUse20 {
                 num ++;
             }
         }
-        int newIndex = 0;
         char[] newChars = new char[originChars.length+2*num];
+        int newIndex = 0;
         for (int i = 0; i < originChars.length; i++){
             if (originChars[i] != ' '){
-                newChars[newIndex++] = originChars[i];
+                newChars[newIndex] = originChars[i];
+                newIndex++;
             }else {
                 newChars[newIndex++] = '%';
                 newChars[newIndex++] = '2';

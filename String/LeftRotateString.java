@@ -9,13 +9,16 @@ public class LeftRotateString {
         System.out.println(newStr);
     }
     public static String LeftRotateString(String str, int index){
+//        XYZabc，2
         String ret = "";
         String ret2 = "";
         for (int i = 0; i < str.length();i++){
             if(i < index){
                 ret = ret + str.charAt(i);
+//                ret=XY
             }else {
                 ret2 = ret2 + str.charAt(i);
+//                ret2 = Zabc
             }
         }
         return ret2 + ret;

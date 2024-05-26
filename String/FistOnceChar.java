@@ -26,6 +26,8 @@ public class FistOnceChar {
                 return hashMap.get(k);
             }
         }
+        // abcde
+        // bcdae
        return -1;
     }
 
