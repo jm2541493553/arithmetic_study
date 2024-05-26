@@ -10,8 +10,9 @@ public class FromEndToBeginPrintLinkList {
         for (int i = 0; i < n; i++) {
             list.add(scanner.nextInt());
         }
+        list.print();
 
-        ArrayList<Integer> list2 = FromEndToBeginPrintLinkList02(list);
+        ArrayList<Integer> list2 = FromEndToBeginPrintLinkList01(list);
         for (Integer val:list2) {
             System.out.println(val);
         }
@@ -35,13 +36,13 @@ public class FromEndToBeginPrintLinkList {
     public static ArrayList<Integer> FromEndToBeginPrintLinkList02(LinkedList list){
         LinkNode head = new LinkNode(-1);
         LinkNode ln = list.head;
-        ArrayList<Integer> list2 = new ArrayList<>();
         while (ln!=null){
             LinkNode temp = ln.next;
             ln.next = head.next;
             head.next = ln;
             ln = temp;
         }
+        ArrayList<Integer> list2 = new ArrayList<>();
         while (head!=null){
             list2.add(head.val);
             head = head.next;

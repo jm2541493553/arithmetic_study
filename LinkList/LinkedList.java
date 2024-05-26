@@ -1,5 +1,5 @@
 class LinkNode {
-    int val;
+     int val;
      LinkNode next = null;
 
      LinkNode(int val){
