@@ -15,11 +15,11 @@ class ContainMinStack01 {
             }
         }
     }
-    public int pop(){
+    public void pop(){
         if (dataStack.peek() == minStack.peek()){
            minStack.pop();
         }
-        return dataStack.pop();
+        dataStack.pop();
     }
 
     public int min(){
@@ -30,10 +30,13 @@ class ContainMinStack01 {
 class TestContainMinStack{
     public static void main(String[] args) {
         ContainMinStack01 minStack = new ContainMinStack01();
-        minStack.push(-2);
-        minStack.push(-3);
-        minStack.push(0);
+        minStack.push(5);
+        minStack.push(3);
+        minStack.push(4);
 
+        System.out.println(minStack.min());
+        minStack.pop();
+        minStack.pop();
         System.out.println(minStack.min());
     }
 }
