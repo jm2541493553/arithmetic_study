@@ -49,10 +49,13 @@ public class NumberOf1Between1AndN {
         return count;
     }
     private static int NumberOf1Between1AndN02(int n) {
+//        1的总数
         int sum = 0;
         int level = 1;
+//        十位之前的
         int high = n / 10;
         int low = 0;
+//        当前数字
         int cur = n % 10;
         while (high != 0 || cur != 0) {
             if (cur == 0) {

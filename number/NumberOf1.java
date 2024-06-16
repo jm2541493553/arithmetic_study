@@ -4,7 +4,7 @@ public class NumberOf1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        System.out.println(NumberOf103(n));
+        System.out.println(NumberOf102(n));
     }
 
     private static int NumberOf101(int n) {
